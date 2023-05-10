@@ -28,6 +28,7 @@ urlpatterns = [
     
 ] + i18n_patterns(
     path('', include('vss.urls')),
+    path('', include('apps.landing.urls')),
     # NOTE - Si se cambia prefix_default_language a False, hay que actualizar
     # el modo en que se cambia de idioma. Actualmente hacemos un
     # 'slice' de los tres primeros caracteres.
