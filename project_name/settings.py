@@ -164,7 +164,8 @@ LANGUAGES = [
     ('en', _('Inglés')),
 ]
 
-LOCALE_PATHS = os.path.join(BASE_DIR, 'locale')
+# NOTE: Must be a list or tuple
+LOCALE_PATHS = os.path.join(BASE_DIR, 'locale'),
 
 
 # Static files (CSS, JavaScript, Images)
