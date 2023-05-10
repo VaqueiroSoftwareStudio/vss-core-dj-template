@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body style="background-color:#f7f7f7; margin:0; padding:70px 0px; width:100%;">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <table width="100%" style="background-color:#ffffff; border:1px solid #dedede; border-radius:3px;">
+                <tbody>
+                    <tr>
+                        <td style="padding:36px 48px 36px 48px; display:block; background-color:#ced4da;">
+                            {% if branding.get_logo_light %}
+                                <img src="{{ protocol }}://{{ site.domain }}{{ branding.get_logo_light }}" alt="{{ site.name }}" style="height:50px; max-height:50px;">
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 48px 48px 36px;">
+                            {% block content %}{% endblock %}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

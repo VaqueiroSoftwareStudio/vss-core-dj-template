@@ -1,0 +1,32 @@
+{% extends "base_email.html" %}
+{% load i18n phone_tags %}
+{% block title %}{{ email_subject }}{% endblock %}
+{% block content %}
+<table>
+    <tbody>
+        <tr>
+            <td colspan="2" style="padding-bottom:20px;">{% translate 'Has recibido un mensaje a través del formulario de contacto.' %}</td>
+        </tr>
+        <tr>
+            <td><strong>{% translate 'Sitio:' %}</strong></td>
+            <td>{{ site.domain }}</td>
+        </tr>
+        <tr>
+            <td><strong>{% translate 'Nombre' %}</strong></td>
+            <td>{{ form_data.name }}</td>
+        </tr>
+        <tr>
+            <td><strong>{% translate 'Teléfono' %}</strong></td>
+            <td>{{ form_data.phone|phone_format }}</td>
+        </tr>
+        <tr>
+            <td><strong>{% translate 'Email' %}</strong></td>
+            <td>{{ form_data.email|default:'-' }}</td>
+        </tr>
+        <tr>
+            <td><strong>{% translate 'Mensaje' %}</strong></td>
+            <td>{{ form_data.message }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}
